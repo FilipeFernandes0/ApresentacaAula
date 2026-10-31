@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ApresentacaoAula</string>
+    <string name="titulo_lista">Templates de memes</string>
+    <string name="hint_pesquisa">Pesquisar memes </string>
+    <string name="pesquisar">Pesquisar</string>
+    <string name="tentar_novamente">Tentar novamente</string>
+    <string name="aviso_cache">%1$s. A mostrar dados guardados (%2$s).</string>
+    <string name="erro_pesquisa_curta">Escreve pelo menos 2 letras</string>
+    <string name="sem_resultados">Sem resultados.</string>
 </resources>
