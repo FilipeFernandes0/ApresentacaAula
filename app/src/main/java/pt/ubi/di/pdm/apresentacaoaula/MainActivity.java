@@ -8,6 +8,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -97,12 +98,15 @@ public class MainActivity extends AppCompatActivity {
     private void aoMudarEstado(UiState<List<MemeTemplate>> estado) {
         switch (estado.status) {
             case LOADING:
+                Log.d("MEMES", "A carregar...");
                 mostrarLoading();
                 break;
             case SUCCESS:
+                Log.d("MEMES", "Recebi " + (estado.data == null ? 0 : estado.data.size()) + " memes");
                 mostrarSucesso(estado);
                 break;
             case ERROR:
+                Log.d("MEMES", "Erro: " + estado.message);
                 mostrarErro(estado.message);
                 break;
         }

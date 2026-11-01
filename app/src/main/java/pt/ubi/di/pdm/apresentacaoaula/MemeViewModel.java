@@ -11,6 +11,7 @@ import java.net.SocketTimeoutException;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import android.util.Log;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -47,10 +48,10 @@ public class MemeViewModel extends ViewModel {
     // Corre na worker thread: faz o pedido e trata de todos os erros possíveis
     private void executarChamada(Call<MemeResponse> chamada) {
         try {
+            Log.d("MEMES", "Thread: " + Thread.currentThread().getName());
             Response<MemeResponse> r = chamada.execute();  // chamada síncrona (bloqueia só o ajudante)
 
             if (r.isSuccessful() && r.body() != null && r.body().getTemplates() != null) {
-                //Rodrigo guardar a cahe local aqui (só para a lista inicial, não para as pesquisas)
                 estado.postValue(UiState.success(r.body().getTemplates()));   // thread de fundo -> postValue
             } else {
                 estado.postValue(UiState.error(mensagemParaCodigo(r.code())));
@@ -59,7 +60,6 @@ public class MemeViewModel extends ViewModel {
             estado.postValue(UiState.error("O servidor demorou demasiado a responder"));
         } catch (IOException e) {
             if (chamada.isCanceled()) return;              // cancelada de propósito por nós, não é erro
-            //Rodrigo tenta ler a cache
             estado.postValue(UiState.error("Sem ligação à internet"));
         } catch (JsonParseException e) {
             estado.postValue(UiState.error("Resposta do servidor inválida"));
