@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:clipToPadding="false"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- CARTÃO 1: Economia de tokens -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_white"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_chart_icon"
+                    android:contentDescription="Economia de tokens"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_tokens_swap" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Economia de tokens"
+                    android:textColor="#0B2545"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="14dp"
+                android:text="U-Points emitidos vs. descontados"
+                android:textColor="#64748B"
+                android:textSize="13sp" />
+
+            <!-- Duas caixas de destaque: Emitidos + Descontados -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Caixa Azul: Emitidos -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_kpi_icon"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Emitidos"
+                        android:textColor="#CBD5E1"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvTokensEmitidos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="186 400"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Caixa Verde: Descontados -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_token_descontados"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Descontados"
+                        android:textColor="#D1FAE5"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvTokensDescontados"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="71 200"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Gráfico de barras duplas (S1 a S6) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <!-- S1 -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="bottom|center_horizontal" android:orientation="vertical">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="bottom" android:orientation="horizontal">
+                        <View android:layout_width="10dp" android:layout_height="44dp" android:background="@drawable/bg_trend_bar" android:backgroundTint="#0B2545" />
+                        <View android:layout_width="10dp" android:layout_height="16dp" android:layout_marginStart="3dp" android:background="@drawable/bg_trend_bar" android:backgroundTint="#10B981" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="S1" android:textColor="#64748B" android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- S2 -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="bottom|center_horizontal" android:orientation="vertical">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="bottom" android:orientation="horizontal">
+                        <View android:layout_width="10dp" android:layout_height="54dp" android:background="@drawable/bg_trend_bar" android:backgroundTint="#0B2545" />
+                        <View android:layout_width="10dp" android:layout_height="22dp" android:layout_marginStart="3dp" android:background="@drawable/bg_trend_bar" android:backgroundTint="#10B981" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="S2" android:textColor="#64748B" android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- S3 -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="bottom|center_horizontal" android:orientation="vertical">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="bottom" android:orientation="horizontal">
+                        <View android:layout_width="10dp" android:layout_height="64dp" android:background="@drawable/bg_trend_bar" android:backgroundTint="#0B2545" />
+                        <View android:layout_width="10dp" android:layout_height="28dp" android:layout_marginStart="3dp" android:background="@drawable/bg_trend_bar" android:backgroundTint="#10B981" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="S3" android:textColor="#64748B" android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- S4 -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="bottom|center_horizontal" android:orientation="vertical">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="bottom" android:orientation="horizontal">
+                        <View android:layout_width="10dp" android:layout_height="72dp" android:background="@drawable/bg_trend_bar" android:backgroundTint="#0B2545" />
+                        <View android:layout_width="10dp" android:layout_height="34dp" android:layout_marginStart="3dp" android:background="@drawable/bg_trend_bar" android:backgroundTint="#10B981" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="S4" android:textColor="#64748B" android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- S5 -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="bottom|center_horizontal" android:orientation="vertical">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="bottom" android:orientation="horizontal">
+                        <View android:layout_width="10dp" android:layout_height="80dp" android:background="@drawable/bg_trend_bar" android:backgroundTint="#0B2545" />
+                        <View android:layout_width="10dp" android:layout_height="40dp" android:layout_marginStart="3dp" android:background="@drawable/bg_trend_bar" android:backgroundTint="#10B981" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="S5" android:textColor="#64748B" android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- S6 -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="bottom|center_horizontal" android:orientation="vertical">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="bottom" android:orientation="horizontal">
+                        <View android:layout_width="10dp" android:layout_height="88dp" android:background="@drawable/bg_trend_bar" android:backgroundTint="#0B2545" />
+                        <View android:layout_width="10dp" android:layout_height="46dp" android:layout_marginStart="3dp" android:background="@drawable/bg_trend_bar" android:backgroundTint="#10B981" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="S6" android:textColor="#64748B" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Legenda -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/bg_kpi_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="Emitidos (milhares)"
+                    android:textColor="#475569"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/bg_live_badge"
+                    android:backgroundTint="#10B981" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="Descontados"
+                    android:textColor="#475569"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Métricas de fundo: Taxa de troca + Custo / reporte útil -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_alert_box"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Taxa de troca"
+                        android:textColor="#64748B"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvTaxaTroca"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="38%"
+                        android:textColor="#0B2545"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_alert_box"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Custo / reporte útil"
+                        android:textColor="#64748B"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvCustoReporte"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="≈ 0,55 €"
+                        android:textColor="#0B2545"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- CARTÃO 2: Inquérito Flash · Pólo IV à noite -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card_white"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_chart_icon"
+                    android:contentDescription="Inquérito Flash"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_shield_alert_green" />
+
+                <TextView
+                    android:id="@+id/tvSurveyTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Inquérito Flash · Pólo IV à noite"
+                    android:textColor="#0B2545"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvSurveySubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="16dp"
+                android:text="Respostas anónimas · n = 301"
+                android:textColor="#64748B"
+                android:textSize="13sp" />
+
+            <!-- 5 colunas de sentimento -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <!-- 1. Muito seguro (9%) -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="bottom|center_horizontal" android:orientation="vertical">
+                    <View android:layout_width="42dp" android:layout_height="26dp" android:background="@drawable/bg_bar_top_rounded" android:backgroundTint="#10B981" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="😊" android:textSize="22sp" />
+                    <TextView android:id="@+id/tvSurveyPct1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="9%" android:textColor="#0B2545" android:textSize="13sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Muito\nseguro" android:textColor="#64748B" android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- 2. Seguro (18%) -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="bottom|center_horizontal" android:orientation="vertical">
+                    <View android:layout_width="42dp" android:layout_height="48dp" android:background="@drawable/bg_bar_top_rounded" android:backgroundTint="#10B981" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="🙂" android:textSize="22sp" />
+                    <TextView android:id="@+id/tvSurveyPct2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="18%" android:textColor="#0B2545" android:textSize="13sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Seguro\n " android:textColor="#64748B" android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- 3. Neutro (24%) -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="bottom|center_horizontal" android:orientation="vertical">
+                    <View android:layout_width="42dp" android:layout_height="64dp" android:background="@drawable/bg_bar_top_rounded" android:backgroundTint="#64748B" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="😐" android:textSize="22sp" />
+                    <TextView android:id="@+id/tvSurveyPct3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="24%" android:textColor="#0B2545" android:textSize="13sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Neutro\n " android:textColor="#64748B" android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- 4. Inseguro (31%) -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="bottom|center_horizontal" android:orientation="vertical">
+                    <View android:layout_width="42dp" android:layout_height="84dp" android:background="@drawable/bg_bar_top_rounded" android:backgroundTint="#0B2545" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="🙁" android:textSize="22sp" />
+                    <TextView android:id="@+id/tvSurveyPct4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="31%" android:textColor="#0B2545" android:textSize="13sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Inseguro\n " android:textColor="#64748B" android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- 5. Muito inseguro (18%) -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="bottom|center_horizontal" android:orientation="vertical">
+                    <View android:layout_width="42dp" android:layout_height="48dp" android:background="@drawable/bg_bar_top_rounded" android:backgroundTint="#0B2545" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="☹️" android:textSize="22sp" />
+                    <TextView android:id="@+id/tvSurveyPct5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="18%" android:textColor="#0B2545" android:textSize="13sp" android:textStyle="bold" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:text="Muito\ninseguro" android:textColor="#64748B" android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- CARTÃO 3: Recomendações automáticas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_card_white"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/bg_chart_icon"
+                    android:contentDescription="Recomendações"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_sparkles_green" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Recomendações automáticas"
+                    android:textColor="#0B2545"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Recomendação 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/bg_rank_green"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="#0A6B4F"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvRec1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Reforçar a Linha UBI às 8h e 13h nos Pólos I e das Engenharias."
+                    android:textColor="#334155"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Recomendação 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/bg_rank_green"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="#0A6B4F"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvRec2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="2dp"
+                    android:text="Avaliar iluminação e vigilância na paragem do Pólo IV."
+                    android:textColor="#334155"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

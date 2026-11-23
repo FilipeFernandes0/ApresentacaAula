@@ -1,0 +1,118 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="320dp"
+    android:height="320dp"
+    android:viewportWidth="320"
+    android:viewportHeight="320">
+
+    <!-- Fundo do mapa -->
+    <path
+        android:fillColor="#EDF4EE"
+        android:pathData="M16,0 H304 A16,16 0 0,1 320,16 V304 A16,16 0 0,1 304,320 H16 A16,16 0 0,1 0,304 V16 A16,16 0 0,1 16,0 Z" />
+
+    <!-- Vias secundárias brancas -->
+    <path android:pathData="M0,195 L320,140" android:strokeColor="#FFFFFF" android:strokeWidth="6" />
+    <path android:pathData="M45,105 L210,185" android:strokeColor="#FFFFFF" android:strokeWidth="6" />
+    <path android:pathData="M15,275 L235,60" android:strokeColor="#FFFFFF" android:strokeWidth="8" />
+
+    <!-- Linha de água azul suave -->
+    <path
+        android:pathData="M55,320 Q175,205 320,180"
+        android:strokeColor="#BFD7ED"
+        android:strokeWidth="8" />
+
+    <!-- Manchas de calor radiais nas 6 paragens -->
+    <!-- 1. Pólo IV Saúde -->
+    <path android:pathData="M262,24m-30,0a30,30 0,1 1,60 0a30,30 0,1 1,-60 0">
+        <aapt:attr name="android:fillColor">
+            <gradient android:centerX="262" android:centerY="24" android:gradientRadius="30" android:type="radial">
+                <item android:color="#88E05A2B" android:offset="0.0" />
+                <item android:color="#00E05A2B" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 2. Pólo das Engenharias (mais intensa - 100%) -->
+    <path android:pathData="M226,86m-42,0a42,42 0,1 1,84 0a42,42 0,1 1,-84 0">
+        <aapt:attr name="android:fillColor">
+            <gradient android:centerX="226" android:centerY="86" android:gradientRadius="42" android:type="radial">
+                <item android:color="#B5D9481E" android:offset="0.0" />
+                <item android:color="#00D9481E" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 3. Pólo I Reitoria (85%) -->
+    <path android:pathData="M180,142m-36,0a36,36 0,1 1,72 0a36,36 0,1 1,-72 0">
+        <aapt:attr name="android:fillColor">
+            <gradient android:centerX="180" android:centerY="142" android:gradientRadius="36" android:type="radial">
+                <item android:color="#A5D9481E" android:offset="0.0" />
+                <item android:color="#00D9481E" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 4. Praça do Município (60%) -->
+    <path android:pathData="M132,192m-30,0a30,30 0,1 1,60 0a30,30 0,1 1,-60 0">
+        <aapt:attr name="android:fillColor">
+            <gradient android:centerX="132" android:centerY="192" android:gradientRadius="30" android:type="radial">
+                <item android:color="#88E05A2B" android:offset="0.0" />
+                <item android:color="#00E05A2B" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 5. Fórum Covilhã -->
+    <path android:pathData="M84,244m-24,0a24,24 0,1 1,48 0a24,24 0,1 1,-48 0">
+        <aapt:attr name="android:fillColor">
+            <gradient android:centerX="84" android:centerY="244" android:gradientRadius="24" android:type="radial">
+                <item android:color="#70E05A2B" android:offset="0.0" />
+                <item android:color="#00E05A2B" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- 6. Estação CP -->
+    <path android:pathData="M44,284m-24,0a24,24 0,1 1,48 0a24,24 0,1 1,-48 0">
+        <aapt:attr name="android:fillColor">
+            <gradient android:centerX="44" android:centerY="284" android:gradientRadius="24" android:type="radial">
+                <item android:color="#70E05A2B" android:offset="0.0" />
+                <item android:color="#00E05A2B" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Traçado verde da Linha UBI -->
+    <path
+        android:pathData="M44,284 L62,256 L84,244 L108,214 L132,192 L158,166 L180,142 L205,112 L226,86 L248,54 L262,24"
+        android:strokeColor="#2E9E66"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:strokeWidth="3.5" />
+
+    <!-- Pins das 6 paragens -->
+    <!-- Pólo IV -->
+    <path android:fillColor="#0B2545" android:pathData="M262,24m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M262,24m-2.8,0a2.8,2.8 0,1 1,5.6 0a2.8,2.8 0,1 1,-5.6 0" />
+
+    <!-- Pólo das Engenharias (destaque verde) -->
+    <path android:fillColor="#10B981" android:pathData="M226,86m-6.5,0a6.5,6.5 0,1 1,13 0a6.5,6.5 0,1 1,-13 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M226,86m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+
+    <!-- Pólo I Reitoria -->
+    <path android:fillColor="#0B2545" android:pathData="M180,142m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M180,142m-2.8,0a2.8,2.8 0,1 1,5.6 0a2.8,2.8 0,1 1,-5.6 0" />
+
+    <!-- Praça do Município -->
+    <path android:fillColor="#0B2545" android:pathData="M132,192m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M132,192m-2.8,0a2.8,2.8 0,1 1,5.6 0a2.8,2.8 0,1 1,-5.6 0" />
+
+    <!-- Fórum Covilhã -->
+    <path android:fillColor="#0B2545" android:pathData="M84,244m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M84,244m-2.8,0a2.8,2.8 0,1 1,5.6 0a2.8,2.8 0,1 1,-5.6 0" />
+
+    <!-- Estação CP -->
+    <path android:fillColor="#0B2545" android:pathData="M44,284m-6,0a6,6 0,1 1,12 0a6,6 0,1 1,-12 0" />
+    <path android:fillColor="#FFFFFF" android:pathData="M44,284m-2.8,0a2.8,2.8 0,1 1,5.6 0a2.8,2.8 0,1 1,-5.6 0" />
+
+</vector>

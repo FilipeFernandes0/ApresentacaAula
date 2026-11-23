@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_summary"
+        android:icon="@drawable/ic_summary"
+        android:title="Resumo" />
+
+    <item
+        android:id="@+id/nav_heatmap"
+        android:icon="@drawable/ic_heatmap"
+        android:title="Mapa de calor" />
+
+    <item
+        android:id="@+id/nav_tokens"
+        android:icon="@drawable/ic_tokens"
+        android:title="Tokens" />
+</menu>
